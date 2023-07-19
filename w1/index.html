@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PONG</title>
+    <link rel="stylesheet" href="pong.css">
+</head>
+<body>
+    <canvas width="800" height="800"></canvas>
+    <script>
+        var c = document.querySelector(`canvas`);
+        var ctx = c.getContext(`2d`);
+
+        var x = c.width/2;
+        var y = 100;
+        var w = 100;
+        var h = 100;
+        var s = 5;
+        var vx = 15;
+        var vy= 15;
+        var color = `rgb(255,0,0)`;
+
+        var timer = setInterval(main, 1000/60)
+        function main()
+        {
+            ctx.clearRect(0,0,c.width,c.height);
+        
+            x+=vx;
+            y+=vy;
+
+                if(x > c.width-w){
+                    vx = -vx
+                    color = `rgb(0,0,255)`;
+                }
+                if(x < 0){
+                    vx = -vx
+                    color = `rgb(0,255,255)`;
+                }
+                if(y < 0){
+                    vy = -vy
+                    color = `rgb(255,255,0)`;
+                }
+                if(y > c.height-h){
+                    vy = -vy
+                    color = `rgb(255,0,0)`;
+                }
+
+                ctx.fillStyle = color;
+                ctx.fillRect(x,y,w,h);
+        }
+    </script>
+</body>
+</html>
