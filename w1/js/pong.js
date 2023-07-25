@@ -6,7 +6,7 @@ var ctx = c.getContext(`2d`)
 var timer = setInterval(main, 1000/60)
 
 //global friction variable
-var fy = .97
+var fy = 0.93
 
 //p1 setup
 var p1 = new Box();
