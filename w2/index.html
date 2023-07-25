@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var namo = []
+        namo[0] = "jay"
+        namo[1] = "marty"
+        namo[2] = "jordan"
+        namo[3] = "bill"
+        console.log(namo)
+
+        var message = ``
+        for(let i=0; i<namo.length; i++)
+        {
+            document.querySelector(`body`).innerHTML += `<p>${namo[i]}</p>`
+        }
+
+        var people = [
+            {
+                fname:`bobby`,
+                lname:`brown`,
+                hair:`brown`,
+                height:6
+            },
+            {
+                fname:`whitney`,
+                lname:`houston`,
+                hair:`brown`,
+                height:6
+            }
+            
+
+        ]
+        var body = document.querySelector(`body`);
+        
+        for(let i in people[0])
+        {
+            console.log(i)
+        }
+
+       console.table(people)
+
+
+       class Person
+       {
+            constructor(fname= `John`, lname= `Doe`, age=30, height=`8'2"`)
+            {
+                this.fname=fname;
+                this.lname=lname;
+                this.age=age;
+                this.height=height;
+            }
+            setProps(obj)
+            {
+                for(let props in obj)
+                {
+                    if(this[props]!== undefined)
+                    {
+                        this[props] = obj[props]
+                    }
+                }
+                return this;
+            }
+       }
+
+       var me = new Person()
+       console.log(me.setProps({x:12}))
+
+   
+    </script>
+    
+</body>
+</html>
