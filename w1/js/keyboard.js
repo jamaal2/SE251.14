@@ -1,10 +1,14 @@
-
+//array of keys
 var keys = [];
+
+//keydown code
 document.addEventListener(`keydown`, (e)=>{
-    keys[String.fromCharCode(e.keyCode)];
-    console.log(String.fromCharCode(e.keyCode))
+    keys[e.key]=true;
+    //console.log(e.key)
 })
 
+
+//keyup code
 document.addEventListener(`keyup`, (e)=>{
-    keys = [];
+    keys[e.key]=false;
 })
