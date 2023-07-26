@@ -6,7 +6,7 @@ var ctx = c.getContext(`2d`)
 var timer = setInterval(main, 1000/60)
 
 //global friction variable
-var fy = .90
+var fy = .88
 
 //p1 setup
 var p1 = new Box();
@@ -77,9 +77,9 @@ function main()
     }
 
     //p2 collision
-    if(p2.y < 0+p1.h/2)
+    if(p2.y < 0+p2.h/2)
     {
-        p2.y = 0+p1.h/2
+        p2.y = 0+p2.h/2
     }
     if(p2.y > c.height-p2.h/2)
     {
