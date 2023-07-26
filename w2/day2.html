@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var div = document.querySelector(`div`)
+        console.log(div)
+    </script>
+</head>
+<body>
+    <div id="messages">
+        <p>Hi</p>
+        <p>Bye</p>
+    </div>
+    <script>
+        var p = document.querySelectorAll(`#messages p`);
+        var div = document.querySelectorAll(`div`);
+        console.log(Array.from(p))
+        console.log(div)
+
+        for(let i=0; i<p.length; i++)
+        {
+            p[i].innerText += `10`
+        }
+    </script>
+</body>
+</html>
