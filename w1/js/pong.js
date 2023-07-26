@@ -18,7 +18,7 @@ p1.x = 0 + p1.w/2
 var p2 = new Box(); 
 p2.w = 20 
 p2.h = 150 
-p2.x = c.width-p2.w/2
+p2.x = c.width - p2.w/2
 p2.color = `gray`
 
 //ball setup
