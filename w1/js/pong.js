@@ -29,10 +29,39 @@ ball.vx = -2
 ball.vy = -2
 ball.color = `black`
 
+var player = [];
+
+// add player 1
+player[0] = new Player();
+player[0].pad = new Box();
+player[0].pad.w = 20;
+player[0].pad.h = 150;
+player[0].pad.x = 0 + player[0].pad.w / 2;
+
+// add player 2
+player[1] = new Player();
+player[1].pad = new Box();
+player[1].pad.w = 20;
+player[1].pad.h = 150;
+player[1].pad.x = c.width - player[1].pad.w / 2;
+player[1].pad.color = 'gray';
+
 
 
 function main()
 {
+
+     // update player 1 and player 2 paddles
+     player[0].pad.move();
+     player[1].pad.move();
+     player[0].pad.vy *= fy;
+     player[1].pad.vy *= fy;
+ 
+     // draw player 1 and player 2 paddles
+     player[0].pad.draw();
+     player[1].pad.draw();
+
+
     //erases the canvas
     ctx.clearRect(0,0,c.width,c.height)
     
