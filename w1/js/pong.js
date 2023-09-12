@@ -56,7 +56,6 @@ pad[1] = player[1].pad;
 
 function main()
 {
-
      // update player 1 and player 2 paddles
      pad[0].move();
      pad[1].move();
@@ -70,6 +69,10 @@ function main()
 
     //erases the canvas
     ctx.clearRect(0,0,c.width,c.height)
+
+    //player scores
+    console.log(`${player[0].score} | ${player[1].score}`);
+
     
     //p1 movement
     if(keys[`w`])
@@ -124,14 +127,18 @@ function main()
     //ball collision 
     if(ball.x < 0)
     {
-        ball.x = c.width/2
-        ball.y  =c.height/2
+        ball.x = c.width / 2
+        ball.y = c.height / 2
+        player[1].score++;
     }
+
     if(ball.x > c.width)
     {
-        ball.x = c.width
-        ball.vx = -ball.vx
+        ball.x = c.width / 2
+        ball.vx = -ball.vx / 2
+        player[0].score++;
     }
+
     if(ball.y < 0)
     {
         ball.y = 0
@@ -161,4 +168,5 @@ function main()
     p1.draw()
     p2.draw()
     ball.draw()
+
 }
