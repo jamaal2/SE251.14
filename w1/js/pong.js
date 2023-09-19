@@ -32,7 +32,7 @@ ball.w = 20
 ball.h = 20
 ball.vx = -2
 ball.vy = -2
-ball.color = `black`
+ball.color = `white`
 
 // add player 1
 player[0] = new Player();
