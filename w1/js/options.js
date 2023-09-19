@@ -148,3 +148,25 @@ allInputs.forEach(function (input) {
         gameState = "pause";
     });
 });
+
+// Select the ball size input and apply button
+var ballSizeInput = document.getElementById("ball-size");
+var applyButton = document.getElementById("apply-ball-size");
+
+// Add an event listener to the apply button
+applyButton.addEventListener("click", function () {
+    // Get the user ball size
+    var newSize = parseInt(ballSizeInput.value);
+
+    // size is within the range 
+    if (newSize >= parseInt(ballSizeInput.min) && newSize <= parseInt(ballSizeInput.max)) {
+        // Update the ball's size
+        ball.w = newSize;
+        ball.h = newSize;
+
+        // Redraw the ball with the new size
+        ball.draw();
+    } else {
+        alert("Invalid ball size. Please enter a size between " + ballSizeInput.min + " and " + ballSizeInput.max + ".");
+    }
+});
