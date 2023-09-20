@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PONG</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pong.css">
+</head>
+<body>
+    <nav><a href="index.html">HOME</a></nav>
+    <main>
+        <section id="game">
+          <!-- SCOREBOARD -->
+          <section id="score">
+            <div class="scoreLeft">
+              <p>0</p>
+              <br>
+              <h1>Player 1</h1>
+            </div>
+            <div class="scoreRight">
+              <p>0</p>
+              <br>
+              <h1>Player 2</h1>
+            </div>
+          </section>
+          <!-- PING PONG CANVAS   -->
+          <canvas id="pong" width="800" height="650 "></canvas>
+        </section>
+        <!-- OPTIONS MENU -->
+        <section id="options">
+          <h2 id="option-button">Options</h2>
+          <div class="sides">
+            <div class="op">
+              <h2>Player 1</h2>
+              <div></div>
+              <div></div>
+              <label>FILL</label>
+              <input class="fill-input" type="color" />
+              <div class="output"></div>
+              <label>STROKE</label>
+              <input class="stroke" type="color" />
+              <div class="output"></div>
+              <label>UP</label>
+     
+              <input class="u-input" type="text" data-player="0" />
+              <div class="output"></div>
+              <label>DOWN</label>
+            
+              <input class="d-input" type="text" data-player="0" />
+              <div class="output"></div>
+              <label>STRAIGHT</label>
+          
+              <input class="s-input" type="text" data-player="0" />
+              <div class="output"></div>
+            </div>
+            <div class="op">
+              <h2>Player 2</h2>
+              <div></div>
+              <div class="output"></div>
+              <label>FILL</label>
+              <input class="fill-input" type="color" />
+              <div class="output"></div>
+              <label>STROKE</label>
+              <input class="stroke" type="color" />
+              <div class="output"></div>
+              <label>UP</label>
+            
+              <input class="u-input" type="text" data-player="1" />
+              <div class="output"></div>
+              <label>DOWN</label>
+           
+              <input class="d-input" type="text" data-player="1" />
+              <div class="output"></div>
+              <label>STRAIGHT</label>
+           
+              <input class="s-input" type="text" data-player="1" />
+              <div class="output"></div>
+            </div>
+          <div>
+            <label for="ball-size">BALL SIZE:</label>
+          <input type="number" id="ball-size" min="10" max="50" value="20">
+          <button id="apply-ball-size">Apply</button>
+          </div>
+          
+        </section>
+      </main>
+  
+      <script src="js/User.js"></script>
+      <script src="js/Box.js"></script>
+      <script src="js/Keyboard.js"></script>
+      <script src="js/Pong.js"></script>
+      <script src="js/Options.js"></script>
+
+      <script>
+       
+        let params = (new URL(document.location)).searchParams;
+        let name = params.get("load");
+
+
+        
+       
+        alert(name);
+    </script>
+   
+</body>
+</html>

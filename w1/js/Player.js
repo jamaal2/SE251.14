@@ -1,8 +1,10 @@
+// Define Player class
 class Player {
-    constructor(){
-        this.name = 'Player' // player name
-        this.score = 0 // player score
-        this.highscore = 0 //player highscore
-        this.pad = new Box() // player pad
+    constructor() {
+        // Initialize properties for a player
+        this.name = 'Player'; // Player name
+        this.score = 0; // Player score
+        this.highscore = 0; // Player highscore
+        this.pad = new Box(); // Player pad
     }
 }
